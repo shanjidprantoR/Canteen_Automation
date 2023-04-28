@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<html>
+<head><style>
+
+    * {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+    .registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+}
+</style>
+</head>
+<body>
+
+<br><br><br><br>
+ <form method="POST">
+     <div class="container"><br>
+    <fieldset>
+      {% csrf_token %}
+      {{ form }}
+    </fieldset>
+         </div>
+    <button type="submit" class="registerbtn">Login</button><br>
+     <div >
+    <p>Create an account? <a href="{% url 'register' %}">Register</a></p>
+  </div>
+ </form>
+</body>
+</html>
+{% endblock content %}
